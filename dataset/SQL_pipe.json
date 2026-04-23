@@ -1,0 +1,17 @@
+{
+	"name": "SQL_pipe",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pipe"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

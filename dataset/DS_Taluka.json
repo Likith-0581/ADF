@@ -1,0 +1,37 @@
+{
+	"name": "DS_Taluka",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_2_ADF",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Taluka",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Master Data Tluka (1).xlsx",
+				"fileSystem": "data"
+			}
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,90 @@
+{
+	"name": "switch activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@variables('number')",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "10",
+							"activities": [
+								{
+									"name": "Set variable1",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"policy": {
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "return",
+										"value": "10"
+									}
+								}
+							]
+						},
+						{
+							"value": "100",
+							"activities": [
+								{
+									"name": "Set variable2",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"policy": {
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "return",
+										"value": "100"
+									}
+								}
+							]
+						}
+					],
+					"defaultActivities": [
+						{
+							"name": "Set variable3",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "return",
+								"value": "default value"
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"number": {
+				"type": "String",
+				"defaultValue": "1009"
+			},
+			"return": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Activities"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-14T10:12:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

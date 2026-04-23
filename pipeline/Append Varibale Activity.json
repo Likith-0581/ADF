@@ -1,0 +1,72 @@
+{
+	"name": "Append Varibale Activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "numbers",
+					"value": "1"
+				}
+			},
+			{
+				"name": "Append variable1_copy1",
+				"type": "AppendVariable",
+				"dependsOn": [
+					{
+						"activity": "Append variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "numbers",
+					"value": "100"
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Append variable1_copy1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "fina",
+					"value": {
+						"value": "@variables('numbers')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"numbers": {
+				"type": "Array"
+			},
+			"fina": {
+				"type": "Array"
+			}
+		},
+		"folder": {
+			"name": "Activities"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-14T10:12:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

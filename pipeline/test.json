@@ -1,0 +1,32 @@
+{
+	"name": "test",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "sadsads",
+					"value": "sdfgh"
+				}
+			}
+		],
+		"variables": {
+			"sadsads": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Activities"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-14T10:12:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

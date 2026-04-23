@@ -1,0 +1,72 @@
+{
+	"name": "Select_DF",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_Providers",
+						"type": "DatasetReference"
+					},
+					"name": "Providers"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_rawfiles",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "SelectColumns"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ProviderID as string,",
+				"          FirstName as string,",
+				"          LastName as string,",
+				"          Specialization as string,",
+				"          DeptID as string,",
+				"          NPI as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Providers",
+				"Providers select(mapColumn(",
+				"          ProviderID,",
+				"          DeptID,",
+				"          NPI,",
+				"          FirstName,",
+				"          LastName,",
+				"          Specialization",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelectColumns",
+				"SelectColumns sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          {2016-01-01} as string,",
+				"          {336} as string,",
+				"          Italy as string,",
+				"          {Road-650 Black, 62} as string,",
+				"          {699.09824} as string,",
+				"          {699.09825} as string,",
+				"          {1} as string,",
+				"          {55.9279} as string,",
+				"          {413.1463} as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

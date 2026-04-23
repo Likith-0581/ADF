@@ -1,0 +1,42 @@
+{
+	"name": "Select",
+	"properties": {
+		"activities": [
+			{
+				"name": "Select",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Select_DF",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"sink1": {
+								"FileName": "select.csv"
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"folder": {
+			"name": "Data Flows practice"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-04-14T10:12:44Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

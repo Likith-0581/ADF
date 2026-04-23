@@ -1,0 +1,15 @@
+{
+	"name": "likithdatafac",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "aed59896-5a70-4988-8fbb-0e2c032e6840",
+		"tenantId": "b53810ba-65ac-4a89-ae3f-4ac1273ed73e"
+	}
+}

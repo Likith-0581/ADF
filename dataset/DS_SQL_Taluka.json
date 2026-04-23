@@ -1,0 +1,38 @@
+{
+	"name": "DS_SQL_Taluka",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "description",
+				"type": "varchar"
+			},
+			{
+				"name": "state",
+				"type": "varchar"
+			},
+			{
+				"name": "district",
+				"type": "varchar"
+			},
+			{
+				"name": "taluka",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "masterdata_taluka"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

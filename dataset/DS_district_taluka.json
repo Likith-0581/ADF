@@ -1,0 +1,60 @@
+{
+	"name": "DS_district_taluka",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_2_ADF",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ParamDistrict": {
+				"type": "string"
+			},
+			"ParamTaluka": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(dataset().ParamTaluka,'.csv')",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('Taluka/',dataset().ParamDistrict,'/',dataset().ParamTaluka)",
+					"type": "Expression"
+				},
+				"fileSystem": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "description",
+				"type": "String"
+			},
+			{
+				"name": "state",
+				"type": "String"
+			},
+			{
+				"name": "district",
+				"type": "String"
+			},
+			{
+				"name": "taluka",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

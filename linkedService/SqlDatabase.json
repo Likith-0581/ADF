@@ -1,0 +1,17 @@
+{
+	"name": "SqlDatabase",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "dbservers.database.windows.net",
+			"database": "praxticedb",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sree",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQERERDkxNTlELTIyMkUtNEZDMi1BN0Y5LTU5N0ExQTk1QkUzNl9jNmY4YjA3YS1jYTljLTRhOWUtOTU1YS00M2UwMmNjNjEwNzQiDQp9"
+		}
+	}
+}
